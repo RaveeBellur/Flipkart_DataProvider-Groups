@@ -1,0 +1,34 @@
+<project name="Flipkart_Framework" basedir=".">
+
+	
+		<!--Set the paths used in the build 
+			==============================================
+			-->
+			<path id="cp">
+				<pathelement location="bin"/>
+				<fileset dir="jars"/>
+			</path>
+	
+		<!--Compile the code
+	      ========================================================= 
+	      -->
+			<target name ="compile">
+				<javac srcdir="src" destdir="bin" classpathref="cp" includeAntRuntime="no"/>
+			</target>
+			
+		<!--Run the tests
+	      ================= 
+	      -->
+			<target name="run" depends="compile">
+					<java classpathref="cp" classname="org.testng.TestNG" args="testng.xml"/>
+			</target>
+		
+		<!--Run the clean up task
+	      ==========================================================
+	      -->
+			<target name="clean"
+		        description="clean up" >
+				<!-- Delete the ${bin} directory trees -->
+				<delete dir="${bin}"/>
+			</target>
+</project>

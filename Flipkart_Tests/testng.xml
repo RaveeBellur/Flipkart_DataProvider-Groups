@@ -1,0 +1,23 @@
+<suite name="FlipkartFramework" verbose="1"  parallel="none">
+
+	<test name="Search Test">
+		<groups>
+			<run>
+				<include name="search" />
+			</run>
+		</groups>	
+		
+		<classes>
+			  <class name="com.example.tests.HomePageVerification"/>
+		      <class name="com.example.tests.SearchFunctionality"/>
+		    </classes>
+	</test> 
+
+	<test name="Compare Test">
+		<classes>
+			  <class name="com.example.tests.CompareFunctionality"/>
+	    </classes>
+	</test> 
+
+
+</suite> 
